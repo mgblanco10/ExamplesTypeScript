@@ -1,2 +1,3 @@
 # ExamplesTypeScript
-Tests and examples with typescript
+
+Testing, initiation and examples with typescript.
