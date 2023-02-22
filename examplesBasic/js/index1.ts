@@ -1,3 +1,25 @@
+
+//interface
+interface CamisetaBase{
+    setColor(color);
+    getColor()
+}
+
+//decoradores simplemente en función
+function estampar (logo:string){
+    return function(target:Function){
+        target.prototype.estampacion = function():void{
+            console.log(`camiseta estampada con el logo de  ${logo}`)
+        }
+    }
+}
+// y lo aplico en este caso con logo por parametro OJO nunca se cierra con ;
+// @estampar("Prada")
+
+
+
+//heredo con extends cuando hago la clase y me traigo todos los atributos del padre a la hija
+
 function getNumero(numero:number=12):string{
     return "El numero es: " +numero;
 }
@@ -54,3 +76,4 @@ export class Employee {
 // var employee1 = new Employee("Jose","Gonzalez", 123);
 // var employee2 = new Employee("Maria","Salazar", 321);
 // console.log(employee1, employee2);
+

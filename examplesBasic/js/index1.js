@@ -1,6 +1,17 @@
 "use strict";
 exports.__esModule = true;
 exports.Employee = void 0;
+//decoradores simplemente en función
+function estampar(logo) {
+    return function (target) {
+        target.prototype.estampacion = function () {
+            console.log("camiseta estampada con el logo de  ".concat(logo));
+        };
+    };
+}
+// y lo aplico en este caso con logo por parametro OJO nunca se cierra con ;
+// @estampar("Prada")
+//heredo con extends cuando hago la clase y me traigo todos los atributos del padre a la hija
 function getNumero(numero) {
     if (numero === void 0) { numero = 12; }
     return "El numero es: " + numero;
