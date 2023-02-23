@@ -6,6 +6,8 @@ function arranque(lanzar:string){
     }
 }
 
+
+
 @arranque("lanzamiento del proyecto")
 class Programa{
     public nombre: string;
