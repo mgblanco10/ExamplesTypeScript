@@ -1,1 +1,42 @@
-<p>create works!</p>
+<div class="container">
+    <h2>{{title}}</h2>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Name project</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+            <span class="form_error" *ngIf="name.touched && !name.valid">
+                Name is required
+            </span>
+        </p>
+        <p>
+            <label for="description">Description of project</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span class="form_error" *ngIf="description.touched && !description.valid">
+                Description is required
+            </span>
+        </p>
+        <p>
+            <label for="category">Category of project</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required/>
+            <span class="form_error" *ngIf="category.touched && !category.valid">
+                Category is required
+            </span>
+        </p>
+        <p>
+            <label for="year">Year of creation</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year"/>
+        </p>
+        <p>
+            <label for="langs">Language used</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required/>
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">
+                Languages ​​are required
+            </span>
+        </p>
+        <p>
+            <label for="image">Project image</label>
+            <input type="file" name="image" placeholder="upload image"/>
+        </p>
+        <input type="submit" value="send" [disabled]="!projectForm.form.valid"/>
+    </form>
+</div>

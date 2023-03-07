@@ -1,10 +1,19 @@
-<h1>hello world con Angular</h1>
-<ul>
-  <li><a [routerLink]="['/about-me']">About me</a></li>
-  <li><a [routerLink]="['/projects']">Projects</a></li>
-  <li><a [routerLink]="['/create-Projects']">Create projects</a></li>
-  <li><a [routerLink]="['/contact']">Contact</a></li>
-</ul>
-<router-outlet></router-outlet>
+
+<header>
+  <ul>
+    <li><a [routerLink]="['/about-me']"[routerLinkActive]="['actived']">About me</a></li>
+    <li><a [routerLink]="['/projects']" [routerLinkActive]="['actived']">Projects</a></li>
+    <li id="logo"><a href="#">MGBC</a></li>
+    <li><a [routerLink]="['/create-Projects']" [routerLinkActive]="['actived']">Create projects</a></li>
+    <li><a [routerLink]="['/contact']" [routerLinkActive]="['actived']">Contact</a></li>
+  </ul>
+</header>
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Small steps with Angular made by me &copy;
+</footer>
 
 
