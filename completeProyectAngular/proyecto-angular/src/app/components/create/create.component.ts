@@ -12,7 +12,6 @@ export class CreateComponent implements OnInit {
   public title : string;
   public project: Project;
 
-
   constructor(
     private _projectService: ProjectService
   ){

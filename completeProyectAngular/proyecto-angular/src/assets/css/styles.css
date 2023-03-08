@@ -36,7 +36,8 @@ header{
 header ul{
     display: block;
 	/* width: 40%; */
-    width: 88%;
+    width: 80%;
+	padding-left: 35px;
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
@@ -102,6 +103,7 @@ footer{
 	margin: 0px auto;
 	text-align: center;
 	margin-bottom: 10px;
+	/* margin-bottom: 100px; */
 }
 #title h1{
 	font-family: "finger";
@@ -210,7 +212,7 @@ form input[disabled]{
 	opacity: 0.4;
 	cursor: not-allowed;
 }
-/* .form_error{
+.form_error{
 	font-size: 12px;
 	padding: 3px;
 	background: red;
@@ -232,7 +234,7 @@ form input[disabled]{
 .failed{
 	background: red;
 	color: white;
-} */
+} 
 
 /*Pagina de proyectos*/
 
