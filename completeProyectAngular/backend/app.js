@@ -1,30 +1,20 @@
 'use strict'
 
 const express = require('express');
-const bodyParser = require('body-parser');
+const cors = requiere ('cors');
 
 const app = express();
 
-// cargar archivos rutas
-const project_routes = require('./routes/project');
+// configuración
+app.set('port', process.env.PORT || 4000);
 
 // middlewares
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-
-// Configuración cabeceras y cors
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-//     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-//     next();
-// });
+app.use(cors());
+app.use(express.json());
 
 // rutas
-app.use('/api', project_routes);
+app.get('/', (req, res)=>{ res.send('Welcome the api rest')});
+app.use('/api/project', requiere('./routes/project'));
 
-
-// exportar
 module.exports = app;
 

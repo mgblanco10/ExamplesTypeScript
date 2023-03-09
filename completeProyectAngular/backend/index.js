@@ -1,21 +1,28 @@
 'use strict'
 
-const mongoose = require('mongoose');
+requiere ('dotenv').config();
 const app = require('./app');
-const port = 3700
-//ojo luego enviarme esto a .env
+requiere('./database')
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/portafolio')
-.then(() => {
-	console.log("started successfully");
+async function main(){
+
+	await app.listen(app.get('port'))
+	console.log('started and listening in port: ', appget('port'));
+}
+
+main();
+
+// mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://127.0.0.1:27017/portafolio')
+// .then(() => {
+// 	console.log("started successfully");
 	
-	// Creacion del servidor
-	app.listen(port, () => {
-		console.log(`started and listening in port ${port}` );
-	});
+// 	// Creacion del servidor
+// 	app.listen(port, () => {
+// 		console.log(`started and listening in port ${port}` );
+// 	});
 	
-})
-.catch(err => console.log(err));
+// })
+// .catch(err => console.log(err));
 
 
