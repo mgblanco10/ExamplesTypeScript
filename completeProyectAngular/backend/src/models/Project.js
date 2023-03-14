@@ -7,8 +7,8 @@ const ProjectSchema = new Schema({
 	description: String,
 	category: String,
 	year: Number,
-	langs: String,
-	image: String
+	langs: String
+	// image: String
 });
 
 module.exports = model('Project', ProjectSchema);
