@@ -35,7 +35,6 @@ projectController.getOneProject = async (req, res) =>{
 
 module.exports = projectController;
 
-
 // const controller = {
 	
 // 	home: function(req, res){
