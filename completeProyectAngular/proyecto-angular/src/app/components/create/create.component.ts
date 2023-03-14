@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-create',
@@ -24,5 +25,13 @@ export class CreateComponent implements OnInit {
 
   onSubmit(form:any) {
     console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

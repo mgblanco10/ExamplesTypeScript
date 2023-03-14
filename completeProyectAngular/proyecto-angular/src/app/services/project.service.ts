@@ -9,7 +9,7 @@ export class ProjectService{
     public url: string;
 
     constructor(
-        private_http: HttpClient
+        private _http: HttpClient
     ){
         this.url = Global.url;
     }
@@ -17,12 +17,11 @@ export class ProjectService{
         return 'Probando angula servicio';
     }
 
-    // saveProject(project: Project): Observable <any>{
-    //     let params = JSON.stringify(project);
-    //     let headers = new HttpHeaders().set('Content-type', 'application/json');
+    saveProject(project: Project):Observable<any>{
+        let params = JSON.stringify(project);
+        let headers = new HttpHeaders().set('Content-type', 'application/json');
 
-    //     return this._http.post(this.url+'save-project', params, {headers:headers});
-
-
-    // }
+        return this._http.post(this.url+'createProject', params, {headers:headers});
+    
+    }
 }
