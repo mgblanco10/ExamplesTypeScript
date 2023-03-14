@@ -21,7 +21,7 @@ export class ProjectService{
         let params = JSON.stringify(project);
         let headers = new HttpHeaders().set('Content-type', 'application/json');
 
-        return this._http.post(this.url+'createProject', params, {headers:headers});
+        return this._http.post(this.url+'project', params, {headers:headers});
     
     }
 }

@@ -6,7 +6,7 @@ const cors = require ('cors');
 const app = express();
 
 // configuración
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 3700);
 
 // middlewares
 app.use(cors());

@@ -18,7 +18,9 @@ projectCtrl.createProject =  async(req, res)=>{
 		langs: langs
 	})
 	await newProject.save();
+	// res.send(newProject);
 	res.send('project saved successfully')
+	
 }
 
 projectCtrl.getOneProject = async (req, res) =>{
