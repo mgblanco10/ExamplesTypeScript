@@ -41,5 +41,5 @@ projectCtrl.updateProject = async (req, res)=>{
 	res.send('has been updated successfully')
 }
 
-module.exports = projectController;
+module.exports = projectCtrl;
 

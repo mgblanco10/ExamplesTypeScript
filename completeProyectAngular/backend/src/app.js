@@ -14,7 +14,7 @@ app.use(express.json());
 
 // rutas
 app.get('/', (req, res)=>{ res.send('Welcome the api rest')});
-// app.use('/api/project', requiere('./routes/project'));
+app.use('/api/project', require('./routes/project'));
 // app.use('/api/videos', require ('./routes/video'));
 
 module.exports = app;

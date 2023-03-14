@@ -1,28 +1,21 @@
 'use strict'
 
-const {Router} = requiere ('express')
+const {Router} = require ('express')
 const router = Router ();
 
-const {getProject, getOneProject, createProject, updateProject, deleteProject} = requiere('../controllers/project.controller')
+const {getProject, getOneProject, createProject, updateProject, deleteProject} = require('../controllers/project.controller')
 
-router.router('/')
+router.route('/')
     .get(getProject)
     .post(createProject)
     
-router.router('/:id')
+router.route('/:id')
     .get(getOneProject)
     .delete(deleteProject)
     .put(updateProject)
 
 module.exports = router;
 
-
-// const express = require('express');
-// const ProjectController = require('../controllers/project');
-// const router = express.Router();
-
-// // const multipart = require('connect-multiparty');
-// // const multipartMiddleware = multipart({ uploadDir: './uploads' });
 
 // router.get('/home', ProjectController.home);
 // router.post('/test', ProjectController.test);
