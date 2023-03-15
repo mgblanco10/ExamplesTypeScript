@@ -3,11 +3,11 @@
 const {Router} = require ('express')
 const router = Router ();
 
-const {getProject, getOneProject, createProject, updateProject, deleteProject} = require('../controllers/project.controller')
+const {getProject, getOneProject, saveProject, updateProject, deleteProject} = require('../controllers/project.controller')
 
 router.route('/')
 .get(getProject)
-.post(createProject)
+.post(saveProject)
 
 router.route('/:id')
 .get(getOneProject)
@@ -16,18 +16,18 @@ router.route('/:id')
 
 module.exports = router;
 
-router.post('/createProject', createProject);
+// router.post('/createProject', createProject);
 
-router.get('/home', ProjectController.home);
-router.post('/test', ProjectController.test);
-router.get('/project/:id?', ProjectController.getProject);
+// router.get('/home', ProjectController.home);
+// router.post('/test', ProjectController.test);
+// router.get('/project/:id?', ProjectController.getProject);
 // router.get('/projects', ProjectController.getProjects);
 // router.put('/project/:id', ProjectController.updateProject);
 // router.delete('/project/:id', ProjectController.deleteProject);
 // router.post('/upload-image/:id', multipartMiddleware, ProjectController.uploadImage);
 // router.get('/get-image/:image', ProjectController.getImageFile);
 
-module.exports = router;
+// module.exports = router;
 
 // 'use strict'
 

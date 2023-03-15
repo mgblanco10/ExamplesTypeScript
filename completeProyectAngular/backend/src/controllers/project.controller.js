@@ -8,20 +8,19 @@ projectCtrl.getProject =  async(req, res)=>{
 	res.json(projects);
 }
 
-projectCtrl.createProject =  async(req, res)=>{
-	const { name, description, category, year, langs} = req.body;
+projectCtrl.saveProject = async (req, res) => {
+	const { name, description, category, year, langs } = req.body;
 	const newProject = new Project({
-		name: name,
-		description: description,
-		category: category,
-		year: year,
-		langs: langs
-	})
+	  name: name,
+	  description: description,
+	  category: category,
+	  year: year,
+	  langs: langs,
+	});
 	await newProject.save();
-	// res.send(newProject);
-	res.send('project saved successfully')
-	
-}
+	res.send({project: newProject});
+  };
+
 
 projectCtrl.getOneProject = async (req, res) =>{
 	const oneProject = await Project.findById(req.params.id);
