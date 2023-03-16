@@ -1,0 +1,12 @@
+<div class="container">
+<h2>{{project.name}}</h2>
+<p><u>Year completed</u>:{{project.year}}</p>
+    <p><u>Category</u>:{{project.category}}</p>
+    <p><u>Technologies</u>:{{project.langs}}</p>
+    <p><u>Description</u>:{{project.description}}</p>
+    <p>
+       <a href="#" class="button-edit">Edit</a> 
+       <a (click)="deleteProject(project._id)"class="button-delete">Delete</a> 
+    </p>
+
+</div>

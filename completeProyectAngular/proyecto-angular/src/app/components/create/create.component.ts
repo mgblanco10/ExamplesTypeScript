@@ -15,6 +15,7 @@ import { UploadService } from '../../services/upload.servise';
 export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
+  public saveProject: any = null;
   public status: string = '';
   public filesToUpload: Array<File> = [];
 
@@ -34,6 +35,8 @@ export class CreateComponent implements OnInit {
     this._projectService.saveProject(this.project).subscribe(
       response => {
         if (typeof response === 'object'){
+
+          this.saveProject = response;
           this.status = 'success'; // Si la petición fue exitosa
           form.reset()
         }else{

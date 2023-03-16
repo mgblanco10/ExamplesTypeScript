@@ -1,12 +1,12 @@
 <div class="container">
     <h2>Projects</h2>
     <ul>
-        <li *ngFor="let project of projects"> 
-            <h3>{{project.name}} {{project.year}} </h3>
-            <p>{{project.langs}}</p>
-            <p>{{project.description}}</p>
-         </li>
-       
+        <li *ngFor="let project of projects" class="project"> 
+            <a [routerLink] ="['/project', project._id ]">
+                <h3>{{project.name}} {{project.year}} </h3>
+            </a>
+                <p> Technologies: {{project.langs}}</p>
+                <!-- <p>{{project.description}}</p> -->
+         </li>  
     </ul>
-
   </div>

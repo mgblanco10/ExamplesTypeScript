@@ -11,10 +11,13 @@ import { Global } from '../../services/global';
 })
 export class ProjectsComponent {
   public projects: Project[] = [];
+  public url: string;
 
   constructor(
     private _projectService: ProjectService
-  ){}
+  ){
+    this.url = Global.url;
+  }
 
   ngOnInit(){
     this.getProjects();
@@ -22,12 +25,12 @@ export class ProjectsComponent {
 
   getProjects(){
     this._projectService.getProjects().subscribe(
-      response =>{
+      (response: any) =>{
         console.log(response);
         if(response){
           this.projects = response; // asignar la respuesta al array projects
         }
-      }, error =>{
+      }, (error: any) =>{
         console.log(<any>error)
       }
     );

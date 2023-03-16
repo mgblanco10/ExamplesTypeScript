@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Project } from '../models/project';
 import { Global } from './global';
 
@@ -30,11 +31,20 @@ export class ProjectService {
   //   return this._http.put(`${this.url}project/${projectId}/image`, formData);
   // }
 
-  getProjects(): Observable<any>{
-     const headers = new HttpHeaders().set('Content-type', 'application/json');
+  getProjects(): Observable<Project[]> {
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
 
-     return this._http.get(this.url+'project', {headers:headers})
+    return this._http.get<Project[]>(this.url + 'project', { headers: headers });
   }
 
-
+  getProject(id: string): Observable<Project> {
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this._http.get<Project>(this.url + 'project/' + id, { headers: headers });
+  }
+  deleteProject(id: string): Observable<any>{
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this._http.delete(this.url + 'project/' + id, { headers: headers });
+  }
 }
+
+
