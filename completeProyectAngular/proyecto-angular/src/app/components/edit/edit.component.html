@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
 
     <div class="message success" *ngIf="status == 'success'">    
@@ -8,8 +8,8 @@
     <div class="message failed" *ngIf="status == 'failed'">    
         The project could not be created
     </div>
-
-    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <!-- #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm) -->
+    <form >
         <p>
             <label for="name">Name project</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
@@ -47,6 +47,7 @@
             <!-- (change)="fileChangeEvent($event)" -->
             <input type="file" name="image" placeholder="upload image"/>
         </p>
-        <input type="submit" value="send" [disabled]="!projectForm.form.valid"/>
+        <!-- [disabled]="!projectForm.form.valid" -->
+        <input type="submit" value="send" />
     </form>
 </div>
