@@ -1,5 +1,5 @@
 # ExamplesTypeScript
-Testing, initiation and examples with typescript.
+Essays, initiation and simple examples to learn typescript and angular.
 
 # Functional Description
 Save project application project made the frontend with angular and typescript and the backend with node, express and mongodb as database.
